@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package test.v1;
+
+option go_package = "testconnect/gen/test/v1;testv1";
+
+message ClientRequest{
+    string name = 1;
+}
+
+message ServerResponse{
+    string name = 1;
+}
+
+service SimpleGreetService {
+    rpc SayHello(ClientRequest) returns (ServerResponse);
+}
